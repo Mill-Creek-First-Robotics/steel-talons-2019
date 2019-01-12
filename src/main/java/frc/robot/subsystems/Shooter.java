@@ -1,6 +1,9 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 public class Shooter extends Subsystem {
     public void pitchUp(){
@@ -9,7 +12,7 @@ public class Shooter extends Subsystem {
     public void pitchDown(){
         pitchSolenoid.set(Value.kReverse);
     }
-    DoubleSolenoid pitchSolenoid = null;
+    DoubleSolenoid pitchSolenoid;
     public Shooter(){
         pitchSolenoid = new Solenoid(RobotMap.HanSolonoid);
     }

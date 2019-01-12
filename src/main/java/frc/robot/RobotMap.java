@@ -25,6 +25,6 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   //solenoids test
-  public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 0;
+  public static final int HanSolonoid = 0;
   public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
 }

@@ -11,7 +11,7 @@ public class Shooter extends Subsystem {
     }
     DoubleSolenoid pitchSolenoid = null;
     public Shooter(){
-        pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_DEPLOY,RobotMap.SHOOTER_PITCH_SOLENOID_RETRACT);
+        pitchSolenoid = new Solenoid(RobotMap.SHOOTER_PITCH_SOLENOID_DEPLOY,RobotMap.SHOOTER_PITCH_SOLENOID_RETRACT);
     }
 
 }

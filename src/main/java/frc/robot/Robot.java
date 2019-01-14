@@ -26,6 +26,7 @@ import frc.robot.subsystems.Shooter;
  * project.
  */
 public class Robot extends TimedRobot {
+  public static DriveTrain m_driveTrain = null;
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Shooter m_shooter = new Shooter();
@@ -40,6 +41,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    m_driveTrain = new DriveTrain();
     m_shooter = new Shooter();
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());

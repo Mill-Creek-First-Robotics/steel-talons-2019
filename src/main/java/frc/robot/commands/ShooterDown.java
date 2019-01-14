@@ -1,13 +1,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 /**
  *
  */
-public class ShooterDown extends Command {
-    isFinished = true;
+public class ShooterDown extends InstantCommand {
   public ShooterDown() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_shooter);

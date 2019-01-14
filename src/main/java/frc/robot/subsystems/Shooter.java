@@ -12,7 +12,7 @@ public class Shooter extends Subsystem {
     public void pitchDown(){
         pitchSolenoid.set(Value.kReverse);
     }
-    DoubleSolenoid pitchSolenoid;
+    Solenoid pitchSolenoid;
     public Shooter(){
         pitchSolenoid = new Solenoid(RobotMap.HanSolonoid);
     }

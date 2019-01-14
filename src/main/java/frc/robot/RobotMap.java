@@ -27,4 +27,5 @@ public class RobotMap {
   //solenoids test
   public static final int HanSolonoid = 0;
   public static final int Nullonoid = 1;
+  public static final int MAIN_GYRO = 0;
 }

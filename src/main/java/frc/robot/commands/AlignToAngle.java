@@ -24,12 +24,13 @@ public class AlignToAngle extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-  m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
+    Robot.m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
   }
   
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+   
     double turningValue = (kAngleSetpoint - m_gyro.getAngle()) * kP;
     turningValue = Math.copySign(turningValue, m_joystick.getY());
     Robot.m_driveTrain.arcadeDrive(m_joystick.getY(), turningValue);

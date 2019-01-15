@@ -7,13 +7,14 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.DriveChain;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Shooter;
@@ -28,12 +29,10 @@ import frc.robot.RobotMap;
  * project
  */
 public class Robot extends TimedRobot {
-  public static DriveTrain m_driveTrain = null;
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static Shooter m_shooter = new Shooter();
-  public static OI m_oi;
   public static Shooter m_shooter;
+  public static OI m_oi;
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -44,9 +43,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    m_driveTrain = new DriveTrain();
-    m_shooter = new Shooter();
-    m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);

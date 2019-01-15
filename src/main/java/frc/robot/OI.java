@@ -27,10 +27,11 @@ public class OI {
 	public Joystick m_leftController = new Joystick(0);
 	public Joystick m_rightController = new Joystick(1);
   //2  3
-  JoystickButton m_ButtonTest1 = new JoystickButton(m_leftController, 2);
-  JoystickButton m_ButtonTest2 = new JoystickButton(m_leftController, 3);
-  JoystickButton m_ButtonTest3 = new JoystickButton(m_leftController, 4);
-  JoystickButton m_Trigger = new JoystickButton(m_leftController, 0); //<<<whatever the trigger is assigned to, bind that to this<<<
+  JoystickButton m_LeftThumb = new JoystickButton(m_leftController, 2);
+  JoystickButton m_RightThumb = new JoystickButton(m_leftController, 3);
+  JoystickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 4);
+  JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 5);
+  JoystickButton m_Trigger = new JoystickButton(m_leftController, 0);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.

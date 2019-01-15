@@ -30,7 +30,7 @@ public class OI {
   JoystickButton m_ButtonTest1 = new JoystickButton(m_leftController, 2);
   JoystickButton m_ButtonTest2 = new JoystickButton(m_leftController, 3);
   JoystickButton m_ButtonTest3 = new JoystickButton(m_leftController, 4);
-  JoystickButton m_PROBABLYTRIGGER = new JoystickButton(m_leftController, 1);
+  JoystickButton m_Trigger = new JoystickButton(m_leftController, 0); //<<<whatever the trigger is assigned to, bind that to this<<<
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.

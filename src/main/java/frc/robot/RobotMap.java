@@ -25,6 +25,6 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   //solenoids test
-  public static final int HanSolonoid = 0;
+  public static final int Solonoid = 0;
   public static final int Nullonoid = 1;
 }

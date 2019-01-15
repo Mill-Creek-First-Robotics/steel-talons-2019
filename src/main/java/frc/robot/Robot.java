@@ -27,7 +27,7 @@ import frc.robot.subsystems.Shooter;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static Shooter m_shooter = new Shooter();
+  public static Shooter m_shooter;
   public static OI m_oi;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

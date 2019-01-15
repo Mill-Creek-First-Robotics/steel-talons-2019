@@ -12,6 +12,9 @@ import frc.robot.Robot;
 
 public class AlignToAngle extends Command {
   private static final double kVoltsPerDegreePerSecond = 0.0128;
+
+  public static double targetAngle = 0; // This is angle we want to turn to
+  
   public AlignToAngle() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -29,7 +32,7 @@ public class AlignToAngle extends Command {
   protected void execute() {
     double turningValue = (kAngleSetpoint - m_gyro.getAngle()) * kP;
     turningValue = Math.copySign(turningValue, m_joystick.getY());
-    m_myRobot.arcadeDrive(m_joystick.getY(), turningValue);
+    Robot.m_driveTrain.arcadeDrive(m_joystick.getY(), turningValue);
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -28,7 +28,9 @@ public class OI {
 	public Joystick m_rightController = new Joystick(1);
   //2  3
   JoystickButton m_ButtonTest1 = new JoystickButton(m_leftController, 2);
-	JoystickButton m_ButtonTest2 = new JoystickButton(m_leftController, 3);
+  JoystickButton m_ButtonTest2 = new JoystickButton(m_leftController, 3);
+  JoystickButton m_ButtonTest3 = new JoystickButton(m_leftController, 4);
+  JoystickButton m_Trigger = new JoystickButton(m_leftController, 0); //<<<whatever the trigger is assigned to, bind that to this<<<
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -39,6 +41,7 @@ public class OI {
   public OI(){
     m_ButtonTest1.whenPressed(new ShooterUp());
     m_ButtonTest2.whenPressed(new ShooterDown());
+
   }
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.

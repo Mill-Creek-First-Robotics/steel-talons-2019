@@ -9,7 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.PWMSpeedController;
+import edu.wpi.first.wpilibj.PWMTalonSRX;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import frc.robot.RobotMap;
@@ -18,14 +19,13 @@ import frc.robot.RobotMap;
  * Add your docs here.
  */
 public class DriveTrain extends Subsystem {
-Talon leftFrontTalon = null;
-Talon leftBackTalon = null;
-Talon rightFrontTalon = null;
-Talon rightBackTalon = null;
+  PWMSpeedController leftFrontController = null;
+  PWMSpeedController leftBackController = null;
+  PWMSpeedController rightFrontController = null;
+  PWMSpeedController rightBackController = null;
 
 public DriveTrain() {
-
-  leftFrontTalon = new Talon(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
+  leftFrontController = new PWMTalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
 }
   @Override
   public void initDefaultCommand() {

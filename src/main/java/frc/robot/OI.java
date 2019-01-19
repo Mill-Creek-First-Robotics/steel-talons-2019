@@ -40,8 +40,8 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
   public OI(){
-    m_ButtonTest1.whenPressed(new ShooterUp());
-    m_ButtonTest2.whenPressed(new ShooterDown());
+    m_LeftThumb.whenPressed(new ShooterUp());
+    m_RightThumb.whenPressed(new ShooterDown());
 
   }
   // Start the command when the button is pressed and let it run the command

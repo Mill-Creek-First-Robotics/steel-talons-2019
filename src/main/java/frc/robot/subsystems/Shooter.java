@@ -7,13 +7,13 @@ import frc.robot.RobotMap;
 public class Shooter extends Subsystem {
     Solenoid pitchSolenoid;
     public Shooter(){
-        pitchSolenoid = new Solenoid(RobotMap.Solonoid);
+        pitchSolenoid = new DoubleSolenoid(RobotMap.SOLONOID,RobotMap.NULLONOID);
     }
     public void pitchUp(){
-        pitchSolenoid.set(true);
+        pitchSolenoid.set(Value.kForward);
     }
     public void pitchDown(){
-        pitchSolenoid.set(false);
+        pitchSolenoid.set(Value.kReverse);
     }
     
 

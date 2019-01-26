@@ -8,17 +8,30 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+import com.ctre.phoenix.motorcontrol.can.*;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class ExampleSubsystem extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+public class Lift extends Subsystem {
+  SpeedController liftMotor;
+  double speed = 0.5;
+  public Lift(){
+    liftMotor = new WPI_TalonSRX(RobotMap.LIFT_PORT);
+  }
 
   @Override
   public void initDefaultCommand() {
+
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+  public void up(){
+    liftMotor.set(speed);
+  }
+  public void down(){
+    liftMotor.set(-1 * speed);
+  }
+  public void stop(){
+    liftMotor.set(0);
   }
 }

@@ -20,7 +20,7 @@ WPI_TalonSRX leftFrontTalon = null;
 WPI_TalonSRX leftBackTalon = null;
 WPI_TalonSRX rightFrontTalon = null;
 WPI_TalonSRX rightBackTalon = null;
-WPI_TalonSRX 
+WPI_TalonSRX upDownThingy = null;
 
 public DriveTrain() {
 

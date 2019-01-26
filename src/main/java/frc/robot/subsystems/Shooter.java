@@ -1,12 +1,11 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid.Value;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 public class Shooter extends Subsystem {
-    DoubleSolenoid pitchSolenoid;
+    Solenoid pitchSolenoid;
     public Shooter(){
         pitchSolenoid = new Solenoid(RobotMap.SOLONOID);
     }

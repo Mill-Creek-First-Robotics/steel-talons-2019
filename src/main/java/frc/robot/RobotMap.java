@@ -14,11 +14,15 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  public static final int DRIVETRAIN_LEFT_FRONT_TALON_0 = 0;
-  public static final int DRIVETRAIN_LEFT_BACK_TALON_2 = 2;
-  public static final int DRIVETRAIN_RIGHT_FRONT_TALON_1 = 1;
-  public static final int DRIVETRAIN_RIGHT_BACK_TALON_3 = 3;
-  public static final int UP_AND_DOWN_THINGY_4 = 4;
+  /**
+   *
+   */
+
+  public static final int DRIVETRAIN_LEFT_FRONT_TALON = 0;
+  public static final int DRIVETRAIN_LEFT_BACK_TALON = 2;
+  public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 1;
+  public static final int DRIVETRAIN_RIGHT_BACK_TALON = 3;
+  public static final int LIFT_PORT = 4;
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
@@ -31,6 +35,5 @@ public class RobotMap {
 
   //solenoids test
   public static final int SOLONOID = 0;
-  public static final int NULLONOID = 1;
   public static final int MAIN_GYRO = 0;
 }

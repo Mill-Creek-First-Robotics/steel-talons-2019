@@ -7,11 +7,11 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+
 /**
  * Add your docs here.
  */
@@ -20,7 +20,7 @@ WPI_TalonSRX leftFrontTalon = null;
 WPI_TalonSRX leftBackTalon = null;
 WPI_TalonSRX rightFrontTalon = null;
 WPI_TalonSRX rightBackTalon = null;
-WPI_TalonSRX 
+WPI_TalonSRX upDownThingy = null;
 
 public DriveTrain() {
 

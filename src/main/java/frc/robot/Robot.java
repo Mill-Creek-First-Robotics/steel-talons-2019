@@ -32,7 +32,7 @@ import frc.robot.RobotMap;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static Shooter m_shooter = new Shooter();
+  public static Shooter m_shooter;
   public static OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
@@ -48,6 +48,8 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+    m_shooter = new Shooter();
+    m_oi = new OI();
   }
 
   /**

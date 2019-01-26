@@ -14,6 +14,10 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
+  /**
+   *
+   */
+
   public static final int DRIVETRAIN_LEFT_FRONT_TALON = 0;
   public static final int DRIVETRAIN_LEFT_BACK_TALON = 0;
   public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 0;
@@ -31,6 +35,5 @@ public class RobotMap {
 
   //solenoids test
   public static final int SOLONOID = 0;
-  public static final int NULLONOID = 1;
   public static final int MAIN_GYRO = 0;
 }

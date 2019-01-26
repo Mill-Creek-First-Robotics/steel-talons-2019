@@ -47,7 +47,7 @@ public class OI {
   // three ways:
   public OI(){
     m_LeftThumb.whenPressed(new ShooterUp());
-    m_RightThumb.whenPressed(new ShooterDown());
+    m_LeftThumb.whenReleased(new ShooterDown());
 
   }
   // Start the command when the button is pressed and let it run the command

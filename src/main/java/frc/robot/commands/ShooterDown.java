@@ -1,12 +1,12 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
  *
  */
-public class ShooterDown extends InstantCommand {
+public class ShooterDown extends Command {
   public ShooterDown() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_shooter);
@@ -26,7 +26,7 @@ public class ShooterDown extends InstantCommand {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true

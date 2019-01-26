@@ -13,7 +13,7 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class LiftDown extends InstantCommand {
+public class LiftDown extends Command {
   public LiftDown() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_lift);
@@ -28,6 +28,12 @@ public class LiftDown extends InstantCommand {
   @Override
   protected void execute() {
     Robot.m_lift.down();
+  }
+
+  // Make this return true when this Command no longer needs to run execute()
+  @Override
+  protected boolean isFinished() {
+    return false;
   }
 
   // Called once after isFinished returns true

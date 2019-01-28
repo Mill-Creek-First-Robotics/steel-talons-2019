@@ -34,6 +34,8 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   //solenoids test
-  public static final int SOLONOID = 0;
-  public static final int MAIN_GYRO = 0;
+  public static final int SOLONOID_1 = 0;
+  public static final int SOLONOID_2 = 1;
+  public static final int SOLONOID_3 = 2;
+=======
 }

@@ -12,16 +12,19 @@ public class Shooter extends Subsystem {
         pitchSolenoid1 = new Solenoid(RobotMap.SOLONOID_1);
         pitchSolenoid2 = new Solenoid(RobotMap.SOLONOID_2);
         pitchSolenoid3 = new Solenoid(RobotMap.SOLONOID_3);
+        pitchSOienoid4 = new Solenoid(RobotMap.SOLONOID_4);
     }
     public void pitchUp(){
         pitchSolenoid1.set(true);
         pitchSolenoid2.set(true);
         pitchSolenoid3.set(true);
+        pitchSolonoid4.set(true);
     }
     public void pitchDown(){
         pitchSolenoid1.set(false);
         pitchSolenoid2.set(false);
         pitchSolenoid3.set(false);
+        pitchSolonoid4.set(false);
     }
     
 

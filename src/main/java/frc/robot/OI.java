@@ -53,8 +53,8 @@ public class OI {
     m_LeftThumb.whenReleased(new ShooterDown());
     m_RightThumb.whenPressed(new LiftUp());
     m_RightThumb.whenReleased(new LiftStop());
-    m_UpperLeftThumb.whenPressed(new LiftDown());
-    m_UpperLeftThumb.whenReleased(new LiftStop());
+    m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
+    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
 
 
   }

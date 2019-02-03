@@ -1,13 +1,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ShooterUp extends InstantCommand {
+public class ShooterUp extends Command {
   public ShooterUp() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_shooter);
@@ -27,7 +26,7 @@ public class ShooterUp extends InstantCommand {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true

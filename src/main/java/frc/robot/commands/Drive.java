@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,29 +7,33 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-public class AlignToAngle extends Command {
-  private static final double kVoltsPerDegreePerSecond = 0.0128;
-  public AlignToAngle() {
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.OI;
+import frc.robot.Robot;
+import edu.wpi.first.wpilibj.Joystick;
+
+/**
+ * An example command.  You can replace me with your own command.
+ */
+public class Drive extends Command {
+  public Drive() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
     requires(Robot.m_driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-  m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
+    //Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(),OI.m_rightController.getY());
   }
-  
+
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double turningValue = (kAngleSetpoint - m_gyro.getAngle()) * kP;
-    turningValue = Math.copySign(turningValue, m_joystick.getY());
-    m_myRobot.arcadeDrive(m_joystick.getY(), turningValue);
+
+    //Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(), OI.m_rightController.getY());
   }
 
   // Make this return true when this Command no longer needs to run execute()

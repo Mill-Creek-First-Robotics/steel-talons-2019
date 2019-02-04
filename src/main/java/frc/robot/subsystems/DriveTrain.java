@@ -23,6 +23,7 @@
   WPI_TalonSRX upDownThingy = null;
   public DifferentialDrive m_Drive;
   private double m_MotorSensitivity = -.8f
+  private double m_left;
   public DriveTrain() {
 
     leftFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
@@ -42,7 +43,7 @@
       // setDefaultCommand(new MySpecialCommand());
     }
     public void tankDrive(double left, double right){
-      m_Drive.Tankdrive(left * m_MotorSensitivity, right * m_MotorSensitivity * .95f)
+      m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity)
     }
     
   }

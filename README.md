@@ -8,4 +8,4 @@ What is the meaning of life, if not to provide for family, for how can one say t
 
 **Day 4:** I can't take it any more. Im going to take manners into my own hands and do a code
 
-**Day 5:** You have of dysentery. 
+**Day 5:** You have died of dysentery. 

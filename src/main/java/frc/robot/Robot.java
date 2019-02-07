@@ -19,6 +19,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Auto.HatchDetection;
 
 
 /**
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
+  public static HatchDetection m_hatchDetection = new HatchDetection();
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -49,6 +51,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
     m_shooter = new Shooter();
     m_oi = new OI();
+    
   }
 
   /**

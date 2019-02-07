@@ -19,8 +19,6 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Shooter;
-import frc.robot.RobotMap;
-import edu.wpi.first.cameraserver;
 
 
 /**
@@ -51,7 +49,6 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
     m_shooter = new Shooter();
     m_oi = new OI();
-    CameraServer.startAutomaticCapture(); //Camera?? is this really it?
   }
 
   /**
@@ -132,7 +129,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    DriveTrain.tankDrive(m_leftController.getY, m_rightController.getY)
     Scheduler.getInstance().run();
   }
 

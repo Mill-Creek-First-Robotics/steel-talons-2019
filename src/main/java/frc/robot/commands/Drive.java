@@ -7,15 +7,12 @@
 
 package frc.robot.commands;
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.Joystick;
 
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class Drive extends Command {
   public Drive() {

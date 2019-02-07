@@ -9,8 +9,10 @@
 
   import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-  import edu.wpi.first.wpilibj.command.Subsystem;
-  import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.RobotMap;
 
   /**
    * Add your docs here.
@@ -22,8 +24,7 @@
   WPI_TalonSRX rightBackTalon = null;
   WPI_TalonSRX upDownThingy = null;
   public DifferentialDrive m_Drive;
-  private double m_MotorSensitivity = -.8f
-  private double m_left;
+  private double m_MotorSensitivity = -.8f;
   public DriveTrain() {
 
     leftFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
@@ -34,8 +35,8 @@
     @Override
     public void initDefaultCommand() {
       
-      m_leftMotorGroup = new SpeedControllerGroup(leftFrontTalon, leftBackTalon);
-      m_rightMotorGroup = new SpeedControllerGroup(rightFrontTalon, rightBackTalon);
+      SpeedControllerGroup m_leftMotorGroup = new SpeedControllerGroup(leftFrontTalon, leftBackTalon);
+      SpeedControllerGroup m_rightMotorGroup = new SpeedControllerGroup(rightFrontTalon, rightBackTalon);
       
       m_Drive = new DifferentialDrive(m_leftMotorGroup, m_rightMotorGroup);
 
@@ -44,7 +45,7 @@
       setDefaultCommand(new Drive());
     }
     public void tankDrive(double left, double right){
-      m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity)
+      m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity);
     }
     
   }

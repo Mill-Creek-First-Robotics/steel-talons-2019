@@ -25,7 +25,6 @@ import frc.robot.RobotMap;
   WPI_TalonSRX upDownThingy = null;
   public DifferentialDrive m_Drive;
   private double m_MotorSensitivity = -.8f;
-  private double m_left;
   public DriveTrain() {
 
     leftFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);

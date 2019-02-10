@@ -1,3 +1,6 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com)
+
+
 What is the meaning of life, if not to provide for family, for how can one say that they provide, when there is no provision for death? If so, then the only true meaning can be in death itself, for death is the one constant in all life. 
 
 ### ... and that's why we need robots.
@@ -29,3 +32,7 @@ What is the meaning of life, if not to provide for family, for how can one say t
 **Day 12** I was able to find Chris! Now we can finish the code.
 
 **Day 13** After the robot was complete the furries surrendered. Everyone came back. They don't remember anything. Weird.
+
+[![forthebadge](https://forthebadge.com/images/badges/as-seen-on-tv.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-water.svg)](https://forthebadge.com)

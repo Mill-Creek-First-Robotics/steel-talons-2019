@@ -7,11 +7,8 @@
 
 package frc.robot.commands;
 
-import java.util.ArrayList;
-
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Auto.HatchDetection.Line;
 
 /**
  * An example command.  You can replace me with your own command.

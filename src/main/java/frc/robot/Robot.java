@@ -50,7 +50,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
     m_shooter = new Shooter();
     m_oi = new OI();
-    CameraServer.getInstance().startAutomaticCapture()
+    CameraServer.getInstance().startAutomaticCapture();
   }
 
   /**

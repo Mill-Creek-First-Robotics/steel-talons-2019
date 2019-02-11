@@ -38,5 +38,6 @@ public class RobotMap {
   public static final int SOLONOID_2 = 1;
   public static final int SOLONOID_3 = 2;
   public static final int MAIN_GYRO = 0;
+  public static final int GYRO_CHANNEL = 0; 
 
 }

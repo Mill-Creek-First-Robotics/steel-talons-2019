@@ -15,12 +15,13 @@
   /**
    * Add your docs here.
    */
-  public class DriveTrain extends Subsystem {
+  public class DriveTrain extends PIDSubsystem {
   WPI_TalonSRX leftFrontTalon = null;
   WPI_TalonSRX leftBackTalon = null;
   WPI_TalonSRX rightFrontTalon = null;
   WPI_TalonSRX rightBackTalon = null;
   WPI_TalonSRX upDownThingy = null;
+  Gyro gy;
   public DifferentialDrive m_Drive;
   private double m_MotorSensitivity = -.8f
   private double m_left;
@@ -30,6 +31,9 @@
     leftBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_BACK_TALON);
     rightFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_FRONT_TALON);
     rightBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_BACK_TALON);
+    gy = new AnalogGyro(RobotMap.GYRO_CHANNEL);
+    super("Turn", 1.0, 0.0, 0.0);
+    setPercentTolerance(5.0);
   }
     @Override
     public void initDefaultCommand() {
@@ -42,8 +46,17 @@
       // Set the default command for a subsystem here.
       // setDefaultCommand(new MySpecialCommand());
     }
+    protected double returnPIDInput(){
+      return gy.getAngle();
+    }
+    protected double usePIDOutput(){
+      m_Drive.arcadeDrive(0.0, output, true);
+    }
     public void tankDrive(double left, double right){
       m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity)
+    }
+    public void PIDturn(double d){
+      setSetPoint(d);
     }
     
   }

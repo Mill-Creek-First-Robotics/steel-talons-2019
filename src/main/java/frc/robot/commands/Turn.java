@@ -10,16 +10,14 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.PIDCommand;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.PIDBase;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class Turn extends PIDCommand {
+public class Turn extends Command {
   int counter = 0;  
   double[] angles = {28.75, 61.25, 90, (90 + 28.75), (90 + 61.25), 180, (180 + 28.75), (180 + 61.25), 270, (270 + 28.75), (270 + 61.25), 360};
   public Turn() {
-    super(1, 1, 1);
     requires(Robot.m_driveTrain);
   }
 
@@ -55,14 +53,13 @@ public class Turn extends PIDCommand {
   @Override
   protected void interrupted() {
   }
-
+/*
 @Override
 protected double returnPIDInput() {
-	return 0;
 }
 
 @Override
 protected void usePIDOutput(double output) {
 	
-}
+}*/
 }

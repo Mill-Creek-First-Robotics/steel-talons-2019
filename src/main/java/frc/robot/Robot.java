@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -32,7 +33,7 @@ import edu.wpi.first.cameraserver.CameraServer;
  */
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static PIDSubsystem m_driveTrain = new DriveTrain();
+  public static DriveTrain m_driveTrain = new DriveTrain();
   public static Shooter m_shooter;
   public static OI m_oi;
   public static Lift m_lift = new Lift();

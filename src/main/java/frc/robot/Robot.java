@@ -62,12 +62,6 @@ public class Robot extends TimedRobot {
     CameraServer.getInstance().startAutomaticCapture();
   }
 
-  public void ultrasonic(){
-    double range = m_rangefinder.getRangeInches(); //gets the range of the rangefinder
-    System.out.print(range)
-    //NOTE: probably won't work since our ultrasonic rangefinder is analog
-    //DO SOMETHING WITH THIS REEEEE
-  }
 
   /**
    * This function is called every robot packet, no matter the mode. Use

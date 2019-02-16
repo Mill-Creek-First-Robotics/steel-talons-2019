@@ -42,4 +42,6 @@ What is the meaning of life, if not to provide for family, for how can one say t
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-water.svg)](https://forthebadge.com)
 
 
-**Day 14** Jason is gone; this is a good development.BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM
+**Day 14** Jason is gone! BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM BUM
+
+**Day 15** My tummy is a rumbly

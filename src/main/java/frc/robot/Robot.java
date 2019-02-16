@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -37,6 +38,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Shooter m_shooter;
+  public static Ultrasonic m_rangefinder = new Ultrasonic(1, 1);
   public static OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
@@ -56,7 +58,15 @@ public class Robot extends TimedRobot {
     ahrs = new AHRS(SPI.Port.kMXP); 
     m_shooter = new Shooter();
     m_oi = new OI();
+    m_rangefinder.setAutomaticMode(true);
     CameraServer.getInstance().startAutomaticCapture();
+  }
+
+  public void ultrasonic(){
+    double range = m_rangefinder.getRangeInches(); //gets the range of the rangefinder
+    System.out.print(range)
+    //NOTE: probably won't work since our ultrasonic rangefinder is analog
+    //DO SOMETHING WITH THIS REEEEE
   }
 
   /**

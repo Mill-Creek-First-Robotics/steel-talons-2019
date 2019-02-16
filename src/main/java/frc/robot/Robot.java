@@ -14,12 +14,17 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Shooter;
-import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.SPI;
+
+import com.kauailabs.navx.frc.AHRS;
+
+import edu.wpi.first.cameraserver.CameraServer;
 
 
 /**
@@ -33,9 +38,11 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Shooter m_shooter;
-  public static OI m_oi;
+  // public static Ultrasonic m_rangefinder = new Ultrasonic(1, 1);
+  public static  OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
+  public static AHRS ahrs;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -48,9 +55,13 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+    ahrs = new AHRS(SPI.Port.kMXP); 
     m_shooter = new Shooter();
     m_oi = new OI();
+    // m_rangefinder.setAutomaticMode(true);
+    CameraServer.getInstance().startAutomaticCapture();
   }
+
 
   /**
    * This function is called every robot packet, no matter the mode. Use

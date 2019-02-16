@@ -8,36 +8,32 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
 import frc.robot.Robot;
 
-
 /**
- * An example command. You can replace me with your own command.
+ * An example command.  You can replace me with your own command.
  */
-public class Drive extends Command {
-  public Drive() {
+public class ArmIn extends Command {
+  public ArmIn() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_driveTrain);
+    requires(Robot.m_shooter);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
+    Robot.m_shooter.armIn();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(), OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true

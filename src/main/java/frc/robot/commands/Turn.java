@@ -8,36 +8,38 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
 import frc.robot.Robot;
 
-
 /**
- * An example command. You can replace me with your own command.
+ * An example command.  You can replace me with your own command.
  */
-public class Drive extends Command {
-  public Drive() {
-    // Use requires() here to declare subsystem dependencies
+public class Turn extends Command {
+  int counter = 0;  
+  double[] angles = {28.75, 61.25, 90, (90 + 28.75), (90 + 61.25), 180, (180 + 28.75), (180 + 61.25), 270, (270 + 28.75), (270 + 61.25), 360};
+  public Turn() {
     requires(Robot.m_driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
+    PIDturn(angles[counter]);
+    counter ++;
+  }
+
+  private void PIDturn(double d) {
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
 
-    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(), OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
@@ -50,4 +52,13 @@ public class Drive extends Command {
   @Override
   protected void interrupted() {
   }
+/*
+@Override
+protected double returnPIDInput() {
+}
+
+@Override
+protected void usePIDOutput(double output) {
+	
+}*/
 }

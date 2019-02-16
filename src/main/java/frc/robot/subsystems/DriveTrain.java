@@ -9,11 +9,10 @@
 
   import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.commands.Drive;
 
@@ -26,7 +25,6 @@ import frc.robot.commands.Drive;
   WPI_TalonSRX rightFrontTalon = null;
   WPI_TalonSRX rightBackTalon = null;
   WPI_TalonSRX upDownThingy = null;
-  Gyro gy;
   public DifferentialDrive m_Drive;
   private double m_MotorSensitivity = -.8f;
   public DriveTrain() {
@@ -35,7 +33,6 @@ import frc.robot.commands.Drive;
     leftBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_BACK_TALON);
     rightFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_FRONT_TALON);
     rightBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_BACK_TALON);
-    gy = new AnalogGyro(RobotMap.GYRO_CHANNEL);
 
     setPercentTolerance(5.0);
   }
@@ -52,7 +49,7 @@ import frc.robot.commands.Drive;
       setDefaultCommand(new Drive());
     }
     protected double returnPIDInput(){
-      return gy.getAngle();
+      return Robot.m_gyro.getAngle();
     }
     public void tankDrive(double left, double right){
       m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity);

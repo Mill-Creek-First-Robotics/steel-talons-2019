@@ -31,7 +31,9 @@ public class OI {
   public static Joystick m_rightController = new Joystick(1);
   
   public static JoystickButton m_Trigger = new JoystickButton(m_leftController, 1);
+  public static JoysticButton m_leftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_RightThumb = new JoystickButton(m_leftController, 4);
+  public static JoytsickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -42,8 +44,10 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
   public OI(){
-    m_LeftThumb.whenPressed(new ShooterUp());
-    m_LeftThumb.whenReleased(new ShooterDown());
+    m_Trigger.whenPressed(new ShooterUp());
+    m_Trigger.whenReleased(new ShooterDown());
+    m_leftThumb.whenPressed(new ArmOut());
+    m_UpperLeftThumb.whenPressed(new ArmIn());
     m_RightThumb.whenPressed(new LiftUp());
     m_RightThumb.whenReleased(new LiftStop());
     m_UpperRightThumb.whenPressed(new LiftDown()); //test lift

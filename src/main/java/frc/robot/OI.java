@@ -31,10 +31,11 @@ public class OI {
   public static Joystick m_rightController = new Joystick(1);
   
   public static JoystickButton m_Trigger = new JoystickButton(m_leftController, 1);
-  public static JoysticButton m_leftThumb = new JoystickButton(m_leftController, 3);
+  public static JoystickButton m_leftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_RightThumb = new JoystickButton(m_leftController, 4);
-  public static JoytsickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 5);
+  public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
+  
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to

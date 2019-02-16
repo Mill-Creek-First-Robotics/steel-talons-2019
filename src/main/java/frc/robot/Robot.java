@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Shooter m_shooter;
   public static Ultrasonic m_rangefinder = new Ultrasonic(1, 1);
-  public static OI m_oi;
+  public static  OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
   Command m_autonomousCommand;

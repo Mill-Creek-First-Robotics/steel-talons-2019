@@ -37,7 +37,7 @@ public class OI {
   public static JoystickButton m_RightThumb = new JoystickButton(m_leftController, 4);
   public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_rightController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
-  
+  public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to

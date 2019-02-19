@@ -43,6 +43,7 @@ public class Robot extends TimedRobot {
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
   public static AHRS ahrs;
+  public static DigitalInput m_top_lift_limit = new DigitalInput(RobotMap.TOP_LIFT_LIMIT);
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 

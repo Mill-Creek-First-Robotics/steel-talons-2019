@@ -23,12 +23,12 @@ public class Turn extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    PIDturn(angles[counter%11]);
+    Robot.m_driveTrain.PIDturn(angles[counter%11]);
     counter ++;
   }
-
+  /*
   private void PIDturn(double d) {
-  }
+  }*/
 
   // Called repeatedly when this Command is scheduled to run
   @Override

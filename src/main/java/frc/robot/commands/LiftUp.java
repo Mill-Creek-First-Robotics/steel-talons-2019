@@ -28,6 +28,7 @@ public class LiftUp extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    // System.out.println("DIO 2: " + Robot.m_top_lift_limit.get());
     Robot.m_lift.up();
   }
 

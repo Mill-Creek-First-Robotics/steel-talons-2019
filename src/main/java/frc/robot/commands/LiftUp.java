@@ -14,6 +14,7 @@ import frc.robot.Robot;
  * An example command.  You can replace me with your own command.
  */
 public class LiftUp extends Command {
+  
   public LiftUp() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_lift);
@@ -30,11 +31,11 @@ public class LiftUp extends Command {
     Robot.m_lift.up();
   }
 
-    // Make this return true when this Command no longer needs to run execute()
-    @Override
-    protected boolean isFinished() {
-      return false;
-    }
+  // Make this return true when this Command no longer needs to run execute()
+  @Override
+  protected boolean isFinished() {
+    return Robot.m_top_lift_limit.get();
+  }
 
   // Called once after isFinished returns true
   @Override

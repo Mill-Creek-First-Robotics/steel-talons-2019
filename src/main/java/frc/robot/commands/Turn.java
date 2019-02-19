@@ -23,7 +23,7 @@ public class Turn extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    PIDturn(angles[counter]);
+    PIDturn(angles[counter%11]);
     counter ++;
   }
 
@@ -39,7 +39,7 @@ public class Turn extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return Robot.m_driveTrain.onTarget();
   }
 
   // Called once after isFinished returns true

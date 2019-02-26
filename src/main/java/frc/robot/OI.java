@@ -16,6 +16,7 @@ import frc.robot.commands.LiftStop;
 import frc.robot.commands.LiftUp;
 import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
+import frc.robot.commands.Turn;
 
 /**
  * This class is the glue that binds the controls on the physical operator

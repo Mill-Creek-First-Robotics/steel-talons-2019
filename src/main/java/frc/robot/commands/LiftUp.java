@@ -29,6 +29,11 @@ public class LiftUp extends Command {
   @Override
   protected void execute() {
     // System.out.println("DIO 2: " + Robot.m_top_lift_limit.get());
+    if (Robot.m_top_lift_limit.get()) {
+      Robot.m_lift.stop();
+      return;
+    }
+    
     Robot.m_lift.up();
   }
 

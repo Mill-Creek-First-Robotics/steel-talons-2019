@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -37,13 +38,14 @@ import edu.wpi.first.cameraserver.CameraServer;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
+  public static DigitalInput m_top_lift_limit = new DigitalInput(RobotMap.TOP_LIFT_LIMIT);
   public static Shooter m_shooter;
   // public static Ultrasonic m_rangefinder = new Ultrasonic(1, 1);
   public static  OI m_oi;
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
   public static AHRS ahrs;
-  public static DigitalInput m_top_lift_limit = new DigitalInput(RobotMap.TOP_LIFT_LIMIT);
+  
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 

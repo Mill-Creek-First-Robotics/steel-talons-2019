@@ -41,5 +41,5 @@ public class RobotMap {
   public static final int GYRO_CHANNEL = 0; 
   
   // Limit Switches
-  public static final int TOP_LIFT_LIMIT = 0;
+  public static final int TOP_LIFT_LIMIT = 2;
 }

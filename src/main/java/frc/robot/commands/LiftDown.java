@@ -27,7 +27,13 @@ public class LiftDown extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    if (Robot.m_bot_lift_limit.get()) {
+      Robot.m_lift.stop();
+      return;
+    }
+    
     Robot.m_lift.down();
+  }
   }
 
   // Make this return true when this Command no longer needs to run execute()

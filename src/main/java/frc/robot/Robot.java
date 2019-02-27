@@ -39,6 +39,8 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static DigitalInput m_top_lift_limit = new DigitalInput(RobotMap.TOP_LIFT_LIMIT);
+  public static DigitalInput m_bot_lift_limit = new DigitalInput(RobotMap.BOT_LIFT_LIMIT);
+  
   public static Shooter m_shooter;
   // public static Ultrasonic m_rangefinder = new Ultrasonic(1, 1);
   public static  OI m_oi;

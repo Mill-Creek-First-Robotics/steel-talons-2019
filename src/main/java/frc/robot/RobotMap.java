@@ -42,4 +42,5 @@ public class RobotMap {
   
   // Limit Switches
   public static final int TOP_LIFT_LIMIT = 2;
+  public static final int BOT_LIFT_LIMIT = 3;
 }

@@ -50,7 +50,7 @@ public class Lift extends PIDSubsystem {
   }
 
   private double getThrottle(){
-    return (OI.m_leftController.getThrottle() + 1) / 2;
+    return -((OI.m_leftController.getThrottle() + 1) / 2);
   }
 
   @Override

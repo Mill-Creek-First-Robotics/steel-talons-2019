@@ -28,12 +28,12 @@ public class LiftDown extends Command {
   @Override
   protected void execute() {
     if (!Robot.m_bot_lift_limit.get()) {
-      System.out.print("XXXXX OH NO THE BOTTOM LIMIT SWITCH XXXXXX");
+      System.out.println("XXXXX OH NO THE BOTTOM LIMIT SWITCH XXXXXX");
       Robot.m_lift.stop();
       return;
     }
     
-    System.out.print("||||||| LIFT MOVING DOWN |||||||");  
+    System.out.println("||||||| LIFT MOVING DOWN |||||||");  
     Robot.m_lift.down();
   }
 

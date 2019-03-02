@@ -27,7 +27,7 @@ public class LiftDown extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (Robot.m_bot_lift_limit.get()) {
+    if (!Robot.m_bot_lift_limit.get()) {
       System.out.print("XXXXX OH NO THE BOTTOM LIMIT SWITCH XXXXXX");
       Robot.m_lift.stop();
       return;

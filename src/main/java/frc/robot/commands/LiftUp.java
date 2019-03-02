@@ -29,7 +29,7 @@ public class LiftUp extends Command {
   @Override
   protected void execute() {
     // System.out.println("DIO 2: " + Robot.m_top_lift_limit.get());
-    if (Robot.m_top_lift_limit.get()) {
+    if (!Robot.m_top_lift_limit.get()) {
       System.out.print("XXXXX OH NO THE TOP LIMIT SWITCH XXXXXX");
       Robot.m_lift.stop();
       return;
@@ -41,7 +41,7 @@ public class LiftUp extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return Robot.m_top_lift_limit.get();
+    return false;
   }
 
   // Called once after isFinished returns true

@@ -31,11 +31,15 @@ public class Drive extends Command {
   @Override
   protected void execute() {
     if (OI.m_rightController.getRawButton(2)) {
-      Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() / 3, OI.m_rightController.getY() / 3); //hey guys, this is a very important line, pls no comment it or change it kthx  
+      Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() / 2, OI.m_rightController.getY() / 2); //hey guys, this is a very important line, pls no comment it or change it kthx  
       return;
     }
     // Yeet! I changed it!
-    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_rightController.getY() * OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
+    // double l = Math.copySign(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_leftController.getY());
+    // double r = Math.copySign(OI.m_rightController.getY() * OI.m_rightController.getY(), OI.m_rightController.getY());
+    double l = OI.m_leftController.getY();
+    double r = OI.m_rightController.getY();
+    Robot.m_driveTrain.tankDrive(l, r); //hey guys, this is a very important line, pls no comment it or change it kthx
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -34,7 +34,6 @@ public class LiftDown extends Command {
     
     Robot.m_lift.down();
   }
-  }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override

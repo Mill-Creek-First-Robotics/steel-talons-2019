@@ -22,7 +22,7 @@ public class Lift extends PIDSubsystem {
   
   PIDController pid;
   SpeedController liftMotor;
-  double speed = 0.6;
+  double speed = 0.7;
   public Lift(){
     super(1, 1, 1);
     liftMotor = new WPI_TalonSRX(RobotMap.LIFT_PORT);
@@ -36,17 +36,21 @@ public class Lift extends PIDSubsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
   public void up(){
-    System.out.println("THROTTLE IS AT "+ OI.m_leftController.getThrottle());
-    liftMotor.set(speed);
-    // liftMotor.set(speed * OI.m_leftController.getThrottle());
+    System.out.println("THROTTLE IS AT "+ getThrottle());
+    // liftMotor.set(speed);
+    liftMotor.set(speed * getThrottle());
   }
   public void down(){
-    System.out.println("THROTTLE IS AT "+ OI.m_leftController.getThrottle());
-    liftMotor.set(-1 * speed);
-    // liftMotor.set(-1 * speed * OI.m_leftController.getThrottle());
+    System.out.println("THROTTLE IS AT "+ getThrottle());
+    // liftMotor.set(-1 * speed);
+    liftMotor.set(-1 * speed * getThrottle());
   }
   public void stop(){
     liftMotor.set(0);
+  }
+
+  private double getThrottle(){
+    return (OI.m_leftController.getThrottle() + 1) / 2;
   }
 
   @Override

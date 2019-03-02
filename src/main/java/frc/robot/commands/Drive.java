@@ -30,8 +30,12 @@ public class Drive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(), OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
+    if (OI.m_rightController.getRawButton(2)) {
+      Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() / 3, OI.m_rightController.getY() / 3); //hey guys, this is a very important line, pls no comment it or change it kthx  
+      return;
+    }
+    // Yeet! I changed it!
+    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_rightController.getY() * OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
   }
 
   // Make this return true when this Command no longer needs to run execute()

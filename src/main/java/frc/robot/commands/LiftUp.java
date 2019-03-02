@@ -30,10 +30,11 @@ public class LiftUp extends Command {
   protected void execute() {
     // System.out.println("DIO 2: " + Robot.m_top_lift_limit.get());
     if (Robot.m_top_lift_limit.get()) {
+      System.out.print("XXXXX OH NO THE TOP LIMIT SWITCH XXXXXX");
       Robot.m_lift.stop();
       return;
     }
-    
+    System.out.print("^^^^^^ LIFT MOVING UP ^^^^^^");  
     Robot.m_lift.up();
   }
 

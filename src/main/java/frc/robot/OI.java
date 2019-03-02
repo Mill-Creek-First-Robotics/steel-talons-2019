@@ -51,13 +51,13 @@ public class OI {
   public OI(){
     m_Trigger.whenPressed(new ShooterUp());
     m_Trigger.whenReleased(new ShooterDown());
-    m_leftThumb.whenPressed(new ArmOut());
-    m_UpperLeftThumb.whenPressed(new ArmIn());
+    m_UpperLeftThumb.whenPressed(new ArmOut());
+    m_leftThumb.whenPressed(new ArmIn());
     m_RightThumb.whenPressed(new LiftUp());
     m_RightThumb.whenReleased(new LiftStop());
     m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
     m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
-    m_LLeftThumb.whenPressed(new Turn());
+    // m_LLeftThumb.whenPressed(new Turn());
 
   }
   // Start the command when the button is pressed and let it run the command

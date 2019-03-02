@@ -22,7 +22,7 @@ public class Lift extends PIDSubsystem {
   
   PIDController pid;
   SpeedController liftMotor;
-  double speed = 0.7;
+  double speed = -0.7;
   public Lift(){
     super(1, 1, 1);
     liftMotor = new WPI_TalonSRX(RobotMap.LIFT_PORT);
@@ -50,7 +50,7 @@ public class Lift extends PIDSubsystem {
   }
 
   private double getThrottle(){
-    return -((OI.m_leftController.getThrottle() + 1) / 2);
+    return ((-OI.m_rightController.getThrottle() + 1) / 2);
   }
 
   @Override

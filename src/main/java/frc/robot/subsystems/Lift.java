@@ -36,9 +36,11 @@ public class Lift extends PIDSubsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
   public void up(){
+    System.out.println("THROTTLE IS AT "+ OI.m_leftController.getThrottle());
     liftMotor.set(speed * OI.m_leftController.getThrottle());
   }
   public void down(){
+    System.out.println("THROTTLE IS AT "+ OI.m_leftController.getThrottle());
     liftMotor.set(-1 * speed * OI.m_leftController.getThrottle());
   }
   public void stop(){

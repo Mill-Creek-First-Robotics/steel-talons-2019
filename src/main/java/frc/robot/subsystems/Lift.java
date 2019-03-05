@@ -12,16 +12,17 @@ import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import frc.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.can.*;
+import frc.robot.OI;
+import frc.robot.RobotMap;
 
 public class Lift extends PIDSubsystem {
   PIDSource distanceSensor = new Ultrasonic(0, 1);
   
   PIDController pid;
   SpeedController liftMotor;
-  double speed = 0.5;
+  double speed = -0.7;
   public Lift(){
     super(1, 1, 1);
     liftMotor = new WPI_TalonSRX(RobotMap.LIFT_PORT);
@@ -35,13 +36,21 @@ public class Lift extends PIDSubsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
   public void up(){
-    liftMotor.set(speed);
+    System.out.println("THROTTLE IS AT "+ getThrottle());
+    // liftMotor.set(speed);
+    liftMotor.set(speed * getThrottle());
   }
   public void down(){
-    liftMotor.set(-1 * speed);
+    System.out.println("THROTTLE IS AT "+ getThrottle());
+    // liftMotor.set(-1 * speed);
+    liftMotor.set(-1 * speed * getThrottle());
   }
   public void stop(){
     liftMotor.set(0);
+  }
+
+  private double getThrottle(){
+    return ((-OI.m_rightController.getThrottle() + 1) / 2);
   }
 
   @Override

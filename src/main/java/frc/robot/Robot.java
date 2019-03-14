@@ -35,6 +35,7 @@ import edu.wpi.first.cameraserver.CameraServer;
  * project
  */
 public class Robot extends TimedRobot {
+  
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static DigitalInput m_top_lift_limit = new DigitalInput(RobotMap.TOP_LIFT_LIMIT);
@@ -63,7 +64,7 @@ public class Robot extends TimedRobot {
     m_shooter = new Shooter();
     m_oi = new OI();
     // m_rangefinder.setAutomaticMode(true);
-    CameraServer.getInstance().startAutomaticCapture();
+    CameraServer.getInstance().startAutomaticCapture(0);
   }
 
 

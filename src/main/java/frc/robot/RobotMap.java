@@ -17,7 +17,8 @@ public class RobotMap {
   /**
    *
    */
-
+  
+  // Talon IDs
   public static final int DRIVETRAIN_LEFT_FRONT_TALON = 03;
   public static final int DRIVETRAIN_LEFT_BACK_TALON = 04;
   public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 01;

@@ -50,7 +50,7 @@ public class Drive extends Command {
         Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * precision, OI.m_rightController.getY() * precision);
         break;
       case CHEESE:
-        Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(2));
+        Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(12));
         break;
       case ARCADE:
         Robot.m_driveTrain.arcadeDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY());

@@ -15,16 +15,20 @@ public class Shooter extends Subsystem {
     }
     public void pitchUp(){
         pitchSolenoid1.set(true);
-        pitchSolenoid2.set(true);
     }
     public void pitchDown(){
         pitchSolenoid1.set(false);
-        pitchSolenoid2.set(false);
     }
     public void armOut(){
-        pitchSolenoid3.set(true);
+        pitchSolenoid2.set(true);
     }
     public void armIn(){
+        pitchSolenoid2.set(false);
+    }
+    public void ballEject(){
+        pitchSolenoid3.set(true);
+    }
+    public void ballRetract(){
         pitchSolenoid3.set(false);
     }
     

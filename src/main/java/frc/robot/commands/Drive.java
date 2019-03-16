@@ -7,8 +7,6 @@
 
 package frc.robot.commands;
 
-import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
-
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.OI;
@@ -37,9 +35,11 @@ public class Drive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double precision = 1.0;
     if (OI.m_rightController.getRawButton(2)) {
-      Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() / 2, OI.m_rightController.getY() / 2); //hey guys, this is a very important line, pls no comment it or change it kthx  
-      return;
+      precision = 1.0;
+    } else {
+      precision = 0.5;
     }
     // Yeet! I changed it!
     // double l = Math.copySign(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_leftController.getY());
@@ -47,15 +47,13 @@ public class Drive extends Command {
 
     switch( (int) SmartDashboard.getNumber("driveStyle", TANK ) ){
       case TANK:
-        double l = OI.m_leftController.getY();
-        double r = OI.m_rightController.getY();
-        Robot.m_driveTrain.tankDrive(l, r);
+        Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * precision, OI.m_rightController.getY() * precision);
         break;
       case CHEESE:
-        Robot.m_driveTrain.cheeseDrive(speed, rot, isTurn);
+        Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(2));
         break;
       case ARCADE:
-        Robot.m_driveTrain.arcadeDrive(speed, rot);
+        Robot.m_driveTrain.arcadeDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY());
         break;
     }
        //hey guys, this is a very important line, pls no comment it or change it kthx

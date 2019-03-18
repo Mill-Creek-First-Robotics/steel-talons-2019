@@ -13,10 +13,11 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ExampleCommand extends Command {
-  public ExampleCommand() {
+public class HatchPlace extends Command {
+  public HatchPlace() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.m_lift);
+    requires(Robot.m_shooter);
   }
   final long nano = 1000000000
   long startTime = System.nanoTime();

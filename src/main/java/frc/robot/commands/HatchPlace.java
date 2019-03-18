@@ -63,7 +63,7 @@ private static long resetTimer() {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return elapsedTime >= 5000000000
+    return elapsedTime >= 1.4*nano;
   }
 
   // Called once after isFinished returns true

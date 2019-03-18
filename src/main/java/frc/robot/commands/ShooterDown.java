@@ -16,7 +16,7 @@ public class ShooterDown extends Command {
   @Override
   protected void initialize() {
       Robot.m_shooter.pitchDown();
-  }
+}
 
   // Called repeatedly when this Command is scheduled to run
   @Override

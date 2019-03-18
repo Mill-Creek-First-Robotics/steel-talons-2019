@@ -20,8 +20,8 @@ public class Ultrasonic extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-      double range = Robot.m_rangefinder.getRangeInches(); //gets the range of the rangefinder
-      System.out.print(range);
+     // double range = Robot.m_rangefinder.getRangeInches(); //gets the range of the rangefinder
+      //System.out.print(range);
 
   }
 }

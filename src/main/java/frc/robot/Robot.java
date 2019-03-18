@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -47,7 +48,7 @@ public class Robot extends TimedRobot {
   public static Lift m_lift = new Lift();
   public static Gyro m_gyro = new AnalogGyro(RobotMap.MAIN_GYRO);  
   public static AHRS ahrs;
-  
+  public static Preferences m_prefs;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -63,6 +64,7 @@ public class Robot extends TimedRobot {
     ahrs = new AHRS(SPI.Port.kMXP); 
     m_shooter = new Shooter();
     m_oi = new OI();
+    m_prefs = Preferences.getInstance();
     // m_rangefinder.setAutomaticMode(true);
     CameraServer.getInstance().startAutomaticCapture(0);
   }

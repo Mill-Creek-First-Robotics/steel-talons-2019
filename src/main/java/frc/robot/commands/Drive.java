@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.OI;
 import frc.robot.Robot;
 
@@ -16,6 +17,10 @@ import frc.robot.Robot;
  * An example command. You can replace me with your own command.
  */
 public class Drive extends Command {
+  
+  private final int TANK = 0, CHEESE = 1, ARCADE = 2; 
+  
+
   public Drive() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_driveTrain);
@@ -30,8 +35,28 @@ public class Drive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double precision = 1.0;
+    if (OI.m_rightController.getRawButton(2)) {
+      precision = 1.0;
+    } else {
+      precision = 0.5;
+    }
+    // Yeet! I changed it!
+    // double l = Math.copySign(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_leftController.getY());
+    // double r = Math.copySign(OI.m_rightController.getY() * OI.m_rightController.getY(), OI.m_rightController.getY());
 
-    Robot.m_driveTrain.tankDrive(OI.m_leftController.getY(), OI.m_rightController.getY()); //hey guys, this is a very important line, pls no comment it or change it kthx
+    switch( (int) SmartDashboard.getNumber("driveStyle", TANK ) ){
+      case TANK:
+        Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * precision, OI.m_rightController.getY() * precision);
+        break;
+      case CHEESE:
+        Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(12));
+        break;
+      case ARCADE:
+        Robot.m_driveTrain.arcadeDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY());
+        break;
+    }
+       //hey guys, this is a very important line, pls no comment it or change it kthx
   }
 
   // Make this return true when this Command no longer needs to run execute()

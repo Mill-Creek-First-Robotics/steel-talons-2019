@@ -5,9 +5,9 @@
   /* the project.                                                               */
   /*----------------------------------------------------------------------------*/
 
-  package frc.robot.subsystems;
+package frc.robot.subsystems;
 
-  import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
@@ -54,6 +54,15 @@ import frc.robot.commands.Drive;
     public void tankDrive(double left, double right){
       m_Drive.tankDrive(left * m_MotorSensitivity, right * m_MotorSensitivity);
     }
+
+    public void cheeseDrive(double speed, double rot, boolean isTurn) {
+      m_Drive.curvatureDrive(speed * m_MotorSensitivity, rot, isTurn);
+    }
+
+    public void arcadeDrive(double speed, double rot){
+      m_Drive.arcadeDrive(speed, rot);
+    }
+
     public void PIDturn(double d){
       setSetpoint(d);
     }

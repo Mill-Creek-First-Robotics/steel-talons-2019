@@ -17,7 +17,8 @@ public class RobotMap {
   /**
    *
    */
-
+  
+  // Talon IDs
   public static final int DRIVETRAIN_LEFT_FRONT_TALON = 03;
   public static final int DRIVETRAIN_LEFT_BACK_TALON = 04;
   public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 01;
@@ -34,10 +35,13 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   //solenoids test
-  public static final int SOLONOID_1 = 0;
-  public static final int SOLONOID_2 = 1;
-  public static final int SOLONOID_3 = 2;
+  public static final int SOLONOID_1 = 7;
+  public static final int SOLONOID_2 = 6;
+  public static final int SOLONOID_3 = 5;
   public static final int MAIN_GYRO = 0;
   public static final int GYRO_CHANNEL = 0; 
-
+  
+  // Limit Switches
+  public static final int TOP_LIFT_LIMIT = 2;
+  public static final int BOT_LIFT_LIMIT = 3;
 }

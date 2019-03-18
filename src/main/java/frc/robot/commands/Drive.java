@@ -44,8 +44,8 @@ public class Drive extends Command {
     // Yeet! I changed it!
     // double l = Math.copySign(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_leftController.getY());
     // double r = Math.copySign(OI.m_rightController.getY() * OI.m_rightController.getY(), OI.m_rightController.getY());
-    System.out.println("$$$$$$$ Drive Type" + SmartDashboard.getNumber("driveStyle", TANK));
-    switch( (int) SmartDashboard.getNumber("driveStyle", TANK) ){
+    //System.out.println("$$$$$$$ Drive Type" + SmartDashboard.getNumber("driveStyle", TANK));
+    switch((int) Robot.m_prefs.getDouble("driveStyle", TANK) ){
       case TANK:
         Robot.m_driveTrain.tankDrive(OI.m_leftController.getY() * precision, OI.m_rightController.getY() * precision);
         break;

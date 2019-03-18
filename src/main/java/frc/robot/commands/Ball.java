@@ -24,7 +24,7 @@ public class Ball extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    if(inOrOut[counter] % 2 == 0){
+    if(inOrOut[counter % 2] == 0){
     Robot.m_shooter.ballEject();
   }
     else{

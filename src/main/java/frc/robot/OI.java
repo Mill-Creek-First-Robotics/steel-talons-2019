@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ArmIn;
 import frc.robot.commands.ArmOut;
 import frc.robot.commands.Ball;
-import frc.robot.commands.BallRetract;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftStop;
 import frc.robot.commands.LiftUp;
@@ -43,7 +42,7 @@ public class OI {
   public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_rightController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
-  public static JoystickButton m_testOne = new JoystickButton(m_rightController, 7);
+  public static JoystickButton m_SideButton = new JoystickButton(m_rightController, 9);
   public static JoystickButton m_testTwo = new JoystickButton(m_rightController, 8);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -61,7 +60,7 @@ public class OI {
     m_RightThumb.whenReleased(new LiftStop());
     m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
     m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
-    m_testOne.whenPressed(new Ball());
+    m_SideButton.whenPressed(new Ball());
     //m_testTwo.whenPressed(new BallRetract());
 
 

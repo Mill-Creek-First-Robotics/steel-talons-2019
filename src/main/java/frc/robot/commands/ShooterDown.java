@@ -6,10 +6,8 @@ import frc.robot.Robot;
 /**
  *
  */
-public class Shooter extends Command {
-  int[] shooterToggle = {0,1};
-  int shooterCounter = 0;
-  public Shooter() {
+public class ShooterDown extends Command {
+  public ShooterDown() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_shooter);
   }
@@ -17,13 +15,7 @@ public class Shooter extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    if(shooterToggle[shooterCounter] % 2 == 0){
       Robot.m_shooter.pitchDown();
-  }
-    else{
-      Robot.m_shooter.pitchUp();
-    }
-    shooterCounter ++;
 }
 
   // Called repeatedly when this Command is scheduled to run

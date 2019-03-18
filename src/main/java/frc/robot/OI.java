@@ -17,7 +17,7 @@ import frc.robot.commands.BallRetract;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftStop;
 import frc.robot.commands.LiftUp;
-import frc.robot.commands.Shooter;
+import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.Turn;
 
@@ -53,8 +53,8 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
   public OI(){
-    m_Trigger.whenPressed(new Shooter());
-    //m_Trigger.whenReleased(new ShooterDown());
+    m_Trigger.whenPressed(new ShooterDown());
+    m_Trigger.whenReleased(new ShooterUp());
     m_UpperLeftThumb.whenPressed(new ArmOut());
     m_leftThumb.whenPressed(new ArmIn());
     m_RightThumb.whenPressed(new LiftUp());

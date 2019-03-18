@@ -12,10 +12,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import frc.robot.commands.ArmIn;
 import frc.robot.commands.ArmOut;
+import frc.robot.commands.Ball;
+import frc.robot.commands.BallRetract;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftStop;
 import frc.robot.commands.LiftUp;
-import frc.robot.commands.ShooterDown;
+import frc.robot.commands.Shooter;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.Turn;
 
@@ -41,7 +43,8 @@ public class OI {
   public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_rightController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
-
+  public static JoystickButton m_testOne = new JoystickButton(m_rightController, 7);
+  public static JoystickButton m_testTwo = new JoystickButton(m_rightController, 8);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -50,14 +53,18 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
   public OI(){
-    m_Trigger.whenPressed(new ShooterUp());
-    m_Trigger.whenReleased(new ShooterDown());
+    m_Trigger.whenPressed(new Shooter());
+    //m_Trigger.whenReleased(new ShooterDown());
     m_UpperLeftThumb.whenPressed(new ArmOut());
     m_leftThumb.whenPressed(new ArmIn());
     m_RightThumb.whenPressed(new LiftUp());
     m_RightThumb.whenReleased(new LiftStop());
     m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
     m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    m_testOne.whenPressed(new Ball());
+    //m_testTwo.whenPressed(new BallRetract());
+
+
     // m_LLeftThumb.whenPressed(new Turn());
 
   }

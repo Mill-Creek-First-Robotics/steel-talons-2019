@@ -19,42 +19,42 @@ public class HatchPlace extends Command {
     requires(Robot.m_lift);
     requires(Robot.m_shooter);
   }
-  final long nano = 1000000000
-  long startTime = System.nanoTime();
-  long elapsedTIme = 0;
+  final private long nano = 1000000000;
+  private long startTime = System.nanoTime();
+  private long elapsedTime = 0;
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
   startTimer();
   }
-private static void startTimer() {
+private void startTimer() {
   startTime = System.nanoTime();
 }
 
-private static long resetTimer() {
+private long resetTimer() {
   long out = System.nanoTime() - startTime;
   startTimer();
-  elapsedTime += out;
+  this.elapsedTime += out;
   return out;
 }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (elapsedTime <= 1.3*nano) {
+    if (this.elapsedTime <= 1.3*nano) {
       Robot.m_shooter.armIn();
       return;
     }
-    if (elapsedTime <= 1.2*nano) {
+    if (this.elapsedTime <= 1.2*nano) {
       Robot.m_lift.down();
       return;
     }
-    if (elapsedTime <= .2*nano) {
+    if (this.elapsedTime <= .2*nano) {
     Robot.m_shooter.pitchDown();
     return;
     }
-    if (elapsedTime <= .1*nano) {
+    if (this.elapsedTime <= .1*nano) {
     Robot.m_shooter.armOut();
     Robot.m_shooter.pitchUp();
     return;
@@ -64,7 +64,7 @@ private static long resetTimer() {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return elapsedTime >= 1.4*nano;
+    return this.elapsedTime >= 1.4*nano;
   }
 
   // Called once after isFinished returns true

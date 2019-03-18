@@ -43,20 +43,20 @@ private static long resetTimer() {
   protected void execute() {
     if (elapsedTime <= 1.3*nano) {
       Robot.m_shooter.armIn();
-      return
+      return;
     }
     if (elapsedTime <= 1.2*nano) {
       Robot.m_lift.down();
-      return
+      return;
     }
     if (elapsedTime <= .2*nano) {
     Robot.m_shooter.pitchDown();
-    return
+    return;
     }
     if (elapsedTime <= .1*nano) {
     Robot.m_shooter.armOut();
     Robot.m_shooter.pitchUp();
-    return
+    return;
   }
   }
 

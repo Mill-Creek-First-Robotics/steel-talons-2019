@@ -37,9 +37,9 @@ public class Drive extends Command {
   protected void execute() {
     double precision = 1.0;
     if (OI.m_rightController.getRawButton(2)) {
-      precision = 1.0;
-    } else {
       precision = 0.5;
+    } else {
+      precision = 1.0;
     }
     // Yeet! I changed it!
     // double l = Math.copySign(OI.m_leftController.getY() * OI.m_leftController.getY(), OI.m_leftController.getY());
@@ -53,7 +53,7 @@ public class Drive extends Command {
         Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(12));
         break;
       case ARCADE:
-        Robot.m_driveTrain.arcadeDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY());
+        Robot.m_driveTrain.arcadeDrive(-1 * OI.m_rightController.getY() * precision, OI.m_rightController.getZ() * .7 * precision);
         break;
     }
        //hey guys, this is a very important line, pls no comment it or change it kthx

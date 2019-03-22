@@ -55,15 +55,15 @@ public class OI {
   public OI(){
     m_Trigger.whenPressed(new ShooterDown());
     m_Trigger.whenReleased(new ShooterUp());
-    m_UpperLeftThumb.whenPressed(new LiftUp());
+    m_UpperLeftThumb.whenPressed(new LiftDown());
     m_UpperLeftThumb.whenReleased(new LiftStop());
-    m_leftThumb.whenPressed(new LiftDown());
+    m_leftThumb.whenPressed(new LiftUp());
     m_leftThumb.whenReleased(new LiftStop());
-    m_RightThumb.whenPressed(new ArmOut());
+    m_RightThumb.whenPressed(new ArmIn());
     //m_RightThumb.whenReleased(new LiftStop());
     //m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
     //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
-    m_UpperRightThumb.whenPressed(new ArmIn()); //test lift
+    m_UpperRightThumb.whenPressed(new ArmOut()); //test lift
     //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
     m_SideButton.whenPressed(new BallExtend());
     m_SideButton.whenReleased(new BallRetract());

@@ -12,7 +12,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import frc.robot.commands.ArmIn;
 import frc.robot.commands.ArmOut;
-import frc.robot.commands.Ball;
+import frc.robot.commands.BallExtend;
+import frc.robot.commands.BallRetract;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftStop;
 import frc.robot.commands.LiftUp;
@@ -38,9 +39,9 @@ public class OI {
   public static JoystickButton m_Trigger = new JoystickButton(m_rightController, 1);
   public static JoystickButton m_SecondaryTrigger = new JoystickButton(m_rightController, 2);
   public static JoystickButton m_leftThumb = new JoystickButton(m_rightController, 3);
-  public static JoystickButton m_RightThumb = new JoystickButton(m_leftController, 4);
+  public static JoystickButton m_RightThumb = new JoystickButton(m_rightController, 4);
   public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_rightController, 5);
-  public static JoystickButton m_UpperRightThumb = new JoystickButton(m_leftController, 6);
+  public static JoystickButton m_UpperRightThumb = new JoystickButton(m_rightController, 6);
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_SideButton = new JoystickButton(m_rightController, 9);
   public static JoystickButton m_testTwo = new JoystickButton(m_rightController, 8);
@@ -54,14 +55,18 @@ public class OI {
   public OI(){
     m_Trigger.whenPressed(new ShooterDown());
     m_Trigger.whenReleased(new ShooterUp());
-    m_UpperLeftThumb.whenPressed(new ArmOut());
-    m_leftThumb.whenPressed(new ArmIn());
-    m_RightThumb.whenPressed(new LiftUp());
-    m_RightThumb.whenReleased(new LiftStop());
-    m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
-    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
-    m_SideButton.whenPressed(new Ball());
-    //m_testTwo.whenPressed(new BallRetract());
+    m_UpperLeftThumb.whenPressed(new LiftUp());
+    m_UpperLeftThumb.whenReleased(new LiftStop());
+    m_leftThumb.whenPressed(new LiftDown());
+    m_leftThumb.whenReleased(new LiftStop());
+    m_RightThumb.whenPressed(new ArmOut());
+    //m_RightThumb.whenReleased(new LiftStop());
+    //m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
+    //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    m_UpperRightThumb.whenPressed(new ArmIn()); //test lift
+    //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    m_SideButton.whenPressed(new BallExtend());
+    m_SideButton.whenReleased(new BallRetract());
 
 
     // m_LLeftThumb.whenPressed(new Turn());

@@ -13,10 +13,10 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class Ball extends Command {
-  int[] inOrOut = {0,1};
-  int counter = 0;
-  public Ball() {
+public class BallExtend extends Command {
+  //int[] inOrOut = {0,1};
+  //int counter = 0;
+  public BallExtend() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_subsystem);
   }
@@ -24,13 +24,9 @@ public class Ball extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    if(inOrOut[counter % 2] == 0){
+    //if(inOrOut[counter % 2] == 0){
     Robot.m_shooter.ballEject();
-  }
-    else{
-      Robot.m_shooter.ballRetract();
-    }
-  counter ++;  
+  //counter ++;  
   }
 
   // Called repeatedly when this Command is scheduled to run

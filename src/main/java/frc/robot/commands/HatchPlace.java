@@ -14,8 +14,8 @@ import frc.robot.Robot;
  * An example command.  You can replace me with your own command.
  */
 public class HatchPlace extends Command {
-  /*public HatchPlace() {
-    // Use requires() here to declare subsystem dependencies
+public HatchPlace() {
+     Use requires() here to declare subsystem dependencies
     requires(Robot.m_lift);
     requires(Robot.m_shooter);
   }
@@ -23,7 +23,7 @@ public class HatchPlace extends Command {
   private long startTime = System.nanoTime();
   private long elapsedTime = 0;
 
-  // Called just before this Command runs the first time
+   //Called just before this Command runs the first time
   @Override
   protected void initialize() {
   startTimer();
@@ -39,7 +39,7 @@ private long resetTimer() {
   return out;
 }
 
-  // Called repeatedly when this Command is scheduled to run
+   //Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
     if (this.elapsedTime <= 1.3*nano) {
@@ -61,20 +61,20 @@ private long resetTimer() {
   }
   }
 
-  // Make this return true when this Command no longer needs to run execute()
+   //Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
     return this.elapsedTime >= 1.4*nano;
   }
 
-  // Called once after isFinished returns true
+   //Called once after isFinished returns true
   @Override
   protected void end() {
   }
 
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
+   /*Called when another command which requires one or more of the same
+   subsystems is scheduled to run*/
   @Override
   protected void interrupted() {
-  }*/
+  }
 }

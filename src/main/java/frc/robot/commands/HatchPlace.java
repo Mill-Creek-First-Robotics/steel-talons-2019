@@ -5,14 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+/*package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
  * An example command.  You can replace me with your own command.
- */
+ 
 public class HatchPlace extends Command {
 public HatchPlace() {
      Use requires() here to declare subsystem dependencies
@@ -73,7 +73,7 @@ private long resetTimer() {
   }
 
    /*Called when another command which requires one or more of the same
-   subsystems is scheduled to run*/
+   subsystems is scheduled to run
   @Override
   protected void interrupted() {
   }

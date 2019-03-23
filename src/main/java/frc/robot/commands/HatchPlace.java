@@ -14,7 +14,7 @@ import frc.robot.Robot;
  * An example command.  You can replace me with your own command.
  */
 public class HatchPlace extends Command {
-  public HatchPlace() {
+  /*public HatchPlace() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_lift);
     requires(Robot.m_shooter);
@@ -76,5 +76,5 @@ private long resetTimer() {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-  }
+  }*/
 }

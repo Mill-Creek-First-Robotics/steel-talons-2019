@@ -53,7 +53,7 @@ public class Drive extends Command {
         Robot.m_driveTrain.cheeseDrive(OI.m_rightController.getX() * precision, OI.m_rightController.getY(), OI.m_rightController.getRawButton(12));
         break;
       case ARCADE:
-        Robot.m_driveTrain.arcadeDrive(-1 * OI.m_rightController.getY() * precision, OI.m_rightController.getZ() * .7 * precision);
+        Robot.m_driveTrain.arcadeDrive(-1 * OI.m_rightController.getY() * precision, OI.m_rightController.getZ() * .8 * precision);
         break;
     }
        //hey guys, this is a very important line, pls no comment it or change it kthx

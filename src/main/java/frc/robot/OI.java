@@ -45,6 +45,7 @@ public class OI {
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_SideButton = new JoystickButton(m_rightController, 9);
   public static JoystickButton m_testTwo = new JoystickButton(m_rightController, 8);
+  public static JoystickButton m_testThree = new JoystickButton(m_rightController, 11);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -60,13 +61,15 @@ public class OI {
     m_leftThumb.whenPressed(new LiftUp());
     m_leftThumb.whenReleased(new LiftStop());
     m_RightThumb.whenPressed(new ArmIn());
-    //m_RightThumb.whenReleased(new LiftStop());
-    //m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
-    //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    m_RightThumb.whenReleased(new LiftStop());
+    m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
+    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
     m_UpperRightThumb.whenPressed(new ArmOut()); //test lift
-    //m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
     m_SideButton.whenPressed(new BallExtend());
     m_SideButton.whenReleased(new BallRetract());
+    m_testThree.whenPressed(new LiftUp());
+    m_testThree.whenReleased(new LiftStop());
 
     
 

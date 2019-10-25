@@ -38,9 +38,9 @@ public class OI {
   
   public static JoystickButton m_Trigger = new JoystickButton(m_rightController, 1);
   public static JoystickButton m_SecondaryTrigger = new JoystickButton(m_rightController, 2);
-  public static JoystickButton m_leftThumb = new JoystickButton(m_rightController, 3);
+  public static JoystickButton m_leftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_RightThumb = new JoystickButton(m_rightController, 4);
-  public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_rightController, 5);
+  public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 5);
   public static JoystickButton m_UpperRightThumb = new JoystickButton(m_rightController, 6);
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_SideButton = new JoystickButton(m_rightController, 9);

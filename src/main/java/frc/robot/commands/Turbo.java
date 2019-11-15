@@ -18,12 +18,13 @@ import frc.robot.commands.DriveTrain;
 public class Turbo extends Command {
   public ExampleCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.m_DriveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.m_DriveTrain.turbo();
   }
 
   // Called repeatedly when this Command is scheduled to run

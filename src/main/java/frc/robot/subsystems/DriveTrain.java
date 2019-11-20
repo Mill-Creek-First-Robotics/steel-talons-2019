@@ -66,7 +66,15 @@ import frc.robot.commands.Drive;
     public void PIDturn(double d){
       setSetpoint(d);
     }
-
+    public void turbo()
+    {
+      m_MotorSensitivity = -2;
+    }
+    public void normal()
+    {
+      m_MotorSensitivity = 0.8f; 
+    }
+    
   @Override
   protected void usePIDOutput(double output) {
     m_Drive.arcadeDrive(0.0, output, true);

@@ -10,27 +10,26 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.commands.DriveTrain;
 
 /**
  * An example command.  You can replace me with your own command.
  */
 public class Turbo extends Command {
-  public ExampleCommand() {
+  public Turbo() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_DriveTrain);
+    requires(Robot.m_driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_DriveTrain.turbo();
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    turbo()
+    Robot.m_driveTrain.turbo();
   }
 
   // Make this return true when this Command no longer needs to run execute()

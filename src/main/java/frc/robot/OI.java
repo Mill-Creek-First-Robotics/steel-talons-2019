@@ -20,6 +20,8 @@ import frc.robot.commands.LiftUp;
 import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.Turn;
+import frc.robot.commands.Turbo;
+import frc.robot.commands.Normal;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,13 +37,15 @@ public class OI {
   // Button button = new JoystickButton(stick, buttonNumber);
 	public static Joystick m_leftController = new Joystick(0);
   public static Joystick m_rightController = new Joystick(1);
-  
-  public static JoystickButton m_Trigger = new JoystickButton(m_rightController, 1);
-  public static JoystickButton m_SecondaryTrigger = new JoystickButton(m_rightController, 2);
+  public static JoystickButton m_leftTrigger = new JoystickButton(m_leftController, 1);
+  public static JoystickButton m_R_Trigger = new JoystickButton(m_rightController, 1);
+  public static JoystickButton m_R_SecondaryTrigger = new JoystickButton(m_rightController, 2);
+  public static JoystickButton m_R_LeftThumb = new JoystickButton(m_rightController, 3);
+  public static JoystickButton m_R_RightThumb = new JoystickButton(m_rightController, 4);
+  public static JoystickButton m_R_UpperLeftThumb = new JoystickButton(m_rightController, 5);
+  public static JoystickButton m_R_UpperRightThumb = new JoystickButton(m_rightController, 6);
   public static JoystickButton m_leftThumb = new JoystickButton(m_leftController, 3);
-  public static JoystickButton m_RightThumb = new JoystickButton(m_rightController, 4);
   public static JoystickButton m_UpperLeftThumb = new JoystickButton(m_leftController, 5);
-  public static JoystickButton m_UpperRightThumb = new JoystickButton(m_rightController, 6);
   public static JoystickButton m_LLeftThumb = new JoystickButton(m_leftController, 3);
   public static JoystickButton m_SideButton = new JoystickButton(m_rightController, 9);
   public static JoystickButton m_testTwo = new JoystickButton(m_rightController, 8);
@@ -54,27 +58,35 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
   public OI(){
-    m_Trigger.whenPressed(new ShooterDown());
-    m_Trigger.whenReleased(new ShooterUp());
-    m_UpperLeftThumb.whenPressed(new LiftDown());
-    m_UpperLeftThumb.whenReleased(new LiftStop());
-    m_leftThumb.whenPressed(new LiftUp());
-    m_leftThumb.whenReleased(new LiftStop());
-    m_RightThumb.whenPressed(new ArmIn());
-    m_RightThumb.whenReleased(new LiftStop());
-    m_UpperRightThumb.whenPressed(new LiftDown()); //test lift
-    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
-    m_UpperRightThumb.whenPressed(new ArmOut()); //test lift
-    m_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+    /*
     m_SideButton.whenPressed(new BallExtend());
     m_SideButton.whenReleased(new BallRetract());
-    m_testThree.whenPressed(new LiftUp());
-    m_testThree.whenReleased(new LiftStop());
+    */
 
-    
+    //commands with the lift
+    m_leftThumb.whenPressed(new LiftUp());
+    m_leftThumb.whenReleased(new LiftStop());
+    m_UpperLeftThumb.whenPressed(new LiftDown());
+    m_UpperLeftThumb.whenReleased(new LiftStop());
+   // m_R_UpperRightThumb.whenPressed(new LiftDown()); //test lift
+   // m_R_UpperRightThumb.whenReleased(new LiftStop()); //test lift
+   // m_R_RightThumb.whenPressed(new LiftUp());
+   // m_R_RightThumb.whenReleased(new LiftStop());
+   //why is rightThumb assigned to both arm and lift?
+
+    //commands with the arm
+    m_R_RightThumb.whenPressed(new ArmIn()); // retracts arm
+    m_R_UpperRightThumb.whenPressed(new ArmOut()); //extends arm
+
+    //commands with the arm's piston
+    m_R_Trigger.whenPressed(new ShooterDown());
+    m_R_Trigger.whenReleased(new ShooterUp());
+
 
     // m_LLeftThumb.whenPressed(new Turn());
-
+    //Use at your discretion
+    //m_R_SecondaryTrigger.whenPressed(new Turbo());
+    //m_R_SecondaryTrigger.whenReleased(new Normal());
   }
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.

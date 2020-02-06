@@ -72,7 +72,7 @@ import frc.robot.commands.Drive;
     }
     public void normal()
     {
-      m_MotorSensitivity = 0.8f; 
+      m_MotorSensitivity = -.8f; 
     }
     
   @Override

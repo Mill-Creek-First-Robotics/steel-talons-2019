@@ -10,21 +10,19 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.DriveTrain;
-
 /**
  * An example command.  You can replace me with your own command.
  */
 public class Normal extends Command {
-  public ExampleCommand() {
+  public Normal() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_DriveTrain);
+    requires(Robot.m_driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_DriveTrain.normal();
+    Robot.m_driveTrain.normal();
   }
 
   // Called repeatedly when this Command is scheduled to run

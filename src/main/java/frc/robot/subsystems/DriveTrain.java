@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -27,6 +28,7 @@ import frc.robot.commands.Drive;
   WPI_TalonSRX upDownThingy = null;
   public DifferentialDrive m_Drive;
   private double m_MotorSensitivity = -.8f;
+  private Solenoid gearbox;
   public DriveTrain() {
     super("Turn", 1.0, 0.0, 0.0);
     leftFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
@@ -43,7 +45,8 @@ import frc.robot.commands.Drive;
       SpeedControllerGroup m_rightMotorGroup = new SpeedControllerGroup(rightFrontTalon, rightBackTalon);
       
       m_Drive = new DifferentialDrive(m_leftMotorGroup, m_rightMotorGroup);
-
+      gearbox = new Solenoid(7);
+      gearbox.set(true);
       // Set the default command for a subsystem here.
       // setDefaultCommand(new MySpecialCommand());
       setDefaultCommand(new Drive());
